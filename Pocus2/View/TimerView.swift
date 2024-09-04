@@ -11,6 +11,7 @@ struct TimerView: View {
     @Environment(\.scenePhase) var scenePhase
 
     @State private var viewModel: TimerViewModel
+    @State private var showingResetAlert = false
 
     init() {
         let notificationService = NotificationService()
@@ -32,7 +33,7 @@ struct TimerView: View {
                     .contentTransition(.symbolEffect(.replace, options: .speed(2)))
             }
             .simultaneousGesture(LongPressGesture().onEnded { _ in
-                viewModel.reset()
+                showingResetAlert = true
             })
             .simultaneousGesture(TapGesture(count: 2).onEnded{ _ in
                 viewModel.skip()
@@ -47,6 +48,12 @@ struct TimerView: View {
         .frame(maxHeight: .infinity)
         .banner(show: $viewModel.isShowingBanner, with: viewModel.bannerData)
         .onAppear(perform: viewModel.updateDurations)
+        .alert("You're about to reset a timer!", isPresented: $showingResetAlert) {
+            Button("Cancel", role: .cancel) { }
+            Button("Reset", role: .destructive, action: viewModel.reset)
+        } message: {
+            Text("This action cannot be undone.")
+        }
     }
 }
 
