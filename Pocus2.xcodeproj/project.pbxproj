@@ -8,17 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		9FC093B52C84C27D00DD1E50 /* Pocus2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093B42C84C27D00DD1E50 /* Pocus2App.swift */; };
-		9FC093B72C84C27D00DD1E50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093B62C84C27D00DD1E50 /* ContentView.swift */; };
+		9FC093B72C84C27D00DD1E50 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093B62C84C27D00DD1E50 /* TimerView.swift */; };
 		9FC093B92C84C27D00DD1E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC093B82C84C27D00DD1E50 /* Assets.xcassets */; };
 		9FC093BC2C84C27D00DD1E50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC093BB2C84C27D00DD1E50 /* Preview Assets.xcassets */; };
+		9FC093C72C84C37000DD1E50 /* CircleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093C62C84C37000DD1E50 /* CircleTimer.swift */; };
+		9FC093C92C84C3F700DD1E50 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093C82C84C3F700DD1E50 /* Arc.swift */; };
+		9FC093CE2C84C92100DD1E50 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093CD2C84C92100DD1E50 /* TimerViewModel.swift */; };
+		9FC093D02C84DA3900DD1E50 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093CF2C84DA3900DD1E50 /* NotificationService.swift */; };
+		9FC093D22C87626700DD1E50 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093D12C87626700DD1E50 /* Banner.swift */; };
+		9FC093D42C87742500DD1E50 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093D32C87742500DD1E50 /* NavigationView.swift */; };
+		9FC093D62C884D6A00DD1E50 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093D52C884D6A00DD1E50 /* TabBar.swift */; };
+		9FC093D82C885E9800DD1E50 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093D72C885E9800DD1E50 /* TabBarView.swift */; };
+		9FC093DA2C885F5600DD1E50 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093D92C885F5600DD1E50 /* TabBarItem.swift */; };
+		9FC093DC2C8860DF00DD1E50 /* TabBarItemPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093DB2C8860DF00DD1E50 /* TabBarItemPreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9FC093B12C84C27D00DD1E50 /* Pocus2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocus2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC093B42C84C27D00DD1E50 /* Pocus2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pocus2App.swift; sourceTree = "<group>"; };
-		9FC093B62C84C27D00DD1E50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9FC093B62C84C27D00DD1E50 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		9FC093B82C84C27D00DD1E50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FC093BB2C84C27D00DD1E50 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9FC093C62C84C37000DD1E50 /* CircleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimer.swift; sourceTree = "<group>"; };
+		9FC093C82C84C3F700DD1E50 /* Arc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
+		9FC093CD2C84C92100DD1E50 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		9FC093CF2C84DA3900DD1E50 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		9FC093D12C87626700DD1E50 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		9FC093D32C87742500DD1E50 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		9FC093D52C884D6A00DD1E50 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		9FC093D72C885E9800DD1E50 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		9FC093D92C885F5600DD1E50 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		9FC093DB2C8860DF00DD1E50 /* TabBarItemPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemPreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +52,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F7A4CE92C886B250063D765 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9FC093D72C885E9800DD1E50 /* TabBarView.swift */,
+				9FC093D92C885F5600DD1E50 /* TabBarItem.swift */,
+				9FC093D52C884D6A00DD1E50 /* TabBar.swift */,
+				9FC093DB2C8860DF00DD1E50 /* TabBarItemPreferenceKey.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		9F7A4CEA2C886B380063D765 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F7A4CE92C886B250063D765 /* TabBar */,
+				9FC093D32C87742500DD1E50 /* NavigationView.swift */,
+				9FC093B62C84C27D00DD1E50 /* TimerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F7A4CEB2C886B540063D765 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9FC093CD2C84C92100DD1E50 /* TimerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9F7A4CEC2C886B5A0063D765 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9FC093CF2C84DA3900DD1E50 /* NotificationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9F7A4CED2C886B620063D765 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				9FC093C82C84C3F700DD1E50 /* Arc.swift */,
+				9FC093D12C87626700DD1E50 /* Banner.swift */,
+				9FC093C62C84C37000DD1E50 /* CircleTimer.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		9FC093A82C84C27D00DD1E50 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				9FC093B42C84C27D00DD1E50 /* Pocus2App.swift */,
-				9FC093B62C84C27D00DD1E50 /* ContentView.swift */,
+				9F7A4CED2C886B620063D765 /* Component */,
+				9F7A4CEA2C886B380063D765 /* View */,
+				9F7A4CEB2C886B540063D765 /* ViewModel */,
+				9F7A4CEC2C886B5A0063D765 /* Service */,
 				9FC093B82C84C27D00DD1E50 /* Assets.xcassets */,
 				9FC093BA2C84C27D00DD1E50 /* Preview Content */,
 			);
@@ -137,7 +207,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FC093B72C84C27D00DD1E50 /* ContentView.swift in Sources */,
+				9FC093D62C884D6A00DD1E50 /* TabBar.swift in Sources */,
+				9FC093CE2C84C92100DD1E50 /* TimerViewModel.swift in Sources */,
+				9FC093B72C84C27D00DD1E50 /* TimerView.swift in Sources */,
+				9FC093DC2C8860DF00DD1E50 /* TabBarItemPreferenceKey.swift in Sources */,
+				9FC093C72C84C37000DD1E50 /* CircleTimer.swift in Sources */,
+				9FC093DA2C885F5600DD1E50 /* TabBarItem.swift in Sources */,
+				9FC093D42C87742500DD1E50 /* NavigationView.swift in Sources */,
+				9FC093C92C84C3F700DD1E50 /* Arc.swift in Sources */,
+				9FC093D22C87626700DD1E50 /* Banner.swift in Sources */,
+				9FC093D02C84DA3900DD1E50 /* NotificationService.swift in Sources */,
+				9FC093D82C885E9800DD1E50 /* TabBarView.swift in Sources */,
 				9FC093B52C84C27D00DD1E50 /* Pocus2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
