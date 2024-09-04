@@ -19,16 +19,27 @@ struct TimerView: View {
 
     var body: some View {
         VStack(spacing: 50) {
-            CircleTimer(angle: viewModel.angle, text: viewModel.formattedTime)
+            Text(viewModel.quote)
+                .font(.subheadline)
+                .foregroundStyle(.accent)
+
+            CircleTimer(angle: viewModel.angle, text: viewModel.formattedTime, unit: viewModel.formattedUnit)
                 .frame(width: 300, height: 300)
 
-            Button {
-                viewModel.toggle()
-            } label: {
+            Button(action: {}) {
                 Image(systemName: viewModel.isRunning ? "pause.fill" : "play.fill")
                     .font(.title)
                     .contentTransition(.symbolEffect(.replace, options: .speed(2)))
             }
+            .simultaneousGesture(LongPressGesture().onEnded { _ in
+                viewModel.reset()
+            })
+            .simultaneousGesture(TapGesture(count: 2).onEnded{ _ in
+                viewModel.skip()
+            })
+            .simultaneousGesture(TapGesture().onEnded { _ in
+                viewModel.toggle()
+            })
         }
         .onChange(of: scenePhase) {
             viewModel.hanglePhaseChange(scenePhase)

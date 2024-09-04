@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F7A4CEF2C889D550063D765 /* AppBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A4CEE2C889D550063D765 /* AppBar.swift */; };
 		9FC093B52C84C27D00DD1E50 /* Pocus2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093B42C84C27D00DD1E50 /* Pocus2App.swift */; };
 		9FC093B72C84C27D00DD1E50 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093B62C84C27D00DD1E50 /* TimerView.swift */; };
 		9FC093B92C84C27D00DD1E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC093B82C84C27D00DD1E50 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F7A4CEE2C889D550063D765 /* AppBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBar.swift; sourceTree = "<group>"; };
 		9FC093B12C84C27D00DD1E50 /* Pocus2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocus2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC093B42C84C27D00DD1E50 /* Pocus2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pocus2App.swift; sourceTree = "<group>"; };
 		9FC093B62C84C27D00DD1E50 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				9FC093C82C84C3F700DD1E50 /* Arc.swift */,
 				9FC093D12C87626700DD1E50 /* Banner.swift */,
 				9FC093C62C84C37000DD1E50 /* CircleTimer.swift */,
+				9F7A4CEE2C889D550063D765 /* AppBar.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				9FC093DC2C8860DF00DD1E50 /* TabBarItemPreferenceKey.swift in Sources */,
 				9FC093C72C84C37000DD1E50 /* CircleTimer.swift in Sources */,
 				9FC093DA2C885F5600DD1E50 /* TabBarItem.swift in Sources */,
+				9F7A4CEF2C889D550063D765 /* AppBar.swift in Sources */,
 				9FC093D42C87742500DD1E50 /* NavigationView.swift in Sources */,
 				9FC093C92C84C3F700DD1E50 /* Arc.swift in Sources */,
 				9FC093D22C87626700DD1E50 /* Banner.swift in Sources */,

@@ -19,14 +19,18 @@ struct TabBarView<Content: View>: View {
     }
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            content
-                .safeAreaInset(edge: .bottom) {
-                    TabBar(items: tabs, selection: $selection)
-                }
-        }
-        .onPreferenceChange(TabBarItemPreferenceKey.self) { value in
-            self.tabs = value
+        VStack {
+            AppBar()
+
+            ZStack(alignment: .bottom) {
+                content
+                    .safeAreaInset(edge: .bottom) {
+                        TabBar(items: tabs, selection: $selection)
+                    }
+            }
+            .onPreferenceChange(TabBarItemPreferenceKey.self) { value in
+                self.tabs = value
+            }
         }
     }
 }

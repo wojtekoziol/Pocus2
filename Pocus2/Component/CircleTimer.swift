@@ -10,19 +10,29 @@ import SwiftUI
 struct CircleTimer: View {
     var angle: Double
     var text: String?
+    var unit: String?
 
     var body: some View {
         ZStack {
             Circle()
-                .stroke(.secondary.opacity(0.1), lineWidth: 10)
+                .stroke(.accent.opacity(0.2), lineWidth: 10)
 
             Arc(startAngle: 0, endAngle: angle, clockwise: true)
                 .stroke(.accent, style: StrokeStyle(lineWidth: 10, lineCap: .round))
                 .animation(.linear(duration: 1), value: angle)
 
             if let text {
-                Text(text)
-                    .font(.largeTitle.bold())
+                VStack {
+                    Text(text)
+                        .font(.system(size: 48))
+                        .fontWeight(.light)
+
+                    if let unit {
+                        Text(unit)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
             }
         }
     }
