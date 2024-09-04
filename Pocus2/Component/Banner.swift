@@ -11,6 +11,9 @@ struct BannerData {
     var title: String
     var message: String
     var emoji: String
+
+    static let afterFocus = BannerData(title: "Your focus session has ended!", message: "Make sure to get some rest.", emoji: "🎊")
+    static let afterBreak = BannerData(title: "It's time to focus!", message: "Give it all you've got.", emoji: "⚡️")
 }
 
 struct BannerModifier: ViewModifier {

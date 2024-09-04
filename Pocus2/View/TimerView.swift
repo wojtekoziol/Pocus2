@@ -45,7 +45,7 @@ struct TimerView: View {
             viewModel.hanglePhaseChange(scenePhase)
         }
         .frame(maxHeight: .infinity)
-        .banner(show: $viewModel.isShowingBanner, with: BannerData(title: "Your focus session has ended!", message: "Make sure to get some rest.", emoji: "🎊"))
+        .banner(show: $viewModel.isShowingBanner, with: viewModel.bannerData)
     }
 }
 

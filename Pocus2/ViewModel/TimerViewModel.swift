@@ -26,8 +26,7 @@ class TimerViewModel {
     private var isBreak = false
     private var sessionCount = 0
     var isShowingBanner = false
-
-    private let endDateKey = "endDate"
+    private(set) var bannerData: BannerData = .afterFocus
 
     init(notificationService: NotificationService) {
         self.notificationService = notificationService        
@@ -54,6 +53,7 @@ class TimerViewModel {
 
     private func handleTimerEnd(withBanner: Bool = true) {
         if withBanner {
+            bannerData = isBreak ? .afterBreak : .afterFocus
             isShowingBanner = true
         }
 
@@ -101,20 +101,24 @@ class TimerViewModel {
             isRunning = false
 
             let endDate = Date.now.addingTimeInterval(TimeInterval(timeRemaining))
-            UserDefaults.standard.set(endDate, forKey: endDateKey)
+            UserDefaults.standard.set(endDate, forKey: "endDate")
+            UserDefaults.standard.set(isBreak, forKey: "isBreak")
+            UserDefaults.standard.set(sessionCount, forKey: "sessionCount")
 
         case .active:
-            let endDate = UserDefaults.standard.object(forKey: endDateKey) as? Date
+            let endDate = UserDefaults.standard.object(forKey: "endDate") as? Date
             guard let endDate else { return }
+            self.isBreak = UserDefaults.standard.bool(forKey: "isBreak")
+            self.sessionCount = UserDefaults.standard.integer(forKey: "sessionCount")
 
             if endDate > .now {
                 elapsed = currentDuration - Int(endDate.timeIntervalSince(.now))
                 start()
             } else {
-                reset()
+                skip()
             }
 
-            UserDefaults.standard.removeObject(forKey: endDateKey)
+            UserDefaults.standard.removeObject(forKey: "endDate")
 
         case .inactive:
             break
