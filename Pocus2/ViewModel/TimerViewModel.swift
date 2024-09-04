@@ -15,10 +15,10 @@ class TimerViewModel {
 
     let notificationService: NotificationService
 
-    private let focusDuration = 25 * 60
-    private let shortBreakDuration = 5 * 60
-    private let longBreakDuration = 15 * 60
-    private let maxSessionCount = 4
+    private var focusDuration = 25 * 60
+    private var shortBreakDuration = 5 * 60
+    private var longBreakDuration = 15 * 60
+    private var maxSessionCount = 4
 
     private var timer: Timer?
     private var elapsed = 0
@@ -29,7 +29,7 @@ class TimerViewModel {
     private(set) var bannerData: BannerData = .afterFocus
 
     init(notificationService: NotificationService) {
-        self.notificationService = notificationService        
+        self.notificationService = notificationService
     }
 
     private func start() {
@@ -68,6 +68,8 @@ class TimerViewModel {
         }
 
         isBreak.toggle()
+
+        updateDurations()
     }
 
     private func stop() {
@@ -82,6 +84,7 @@ class TimerViewModel {
         elapsed = 0
         sessionCount = 0
         isBreak = false
+        updateDurations()
     }
 
     func skip() {
@@ -90,6 +93,15 @@ class TimerViewModel {
 
     func toggle() {
         isRunning ? stop() : start()
+    }
+
+    func updateDurations() {
+        guard !isRunning && elapsed == 0 else { return }
+
+        focusDuration = (UserDefaults.standard.value(forKey: "focusDuration") as? Int ?? 25) * 60
+        shortBreakDuration = (UserDefaults.standard.value(forKey: "shortBreakDuration") as? Int ?? 5) * 60
+        longBreakDuration = (UserDefaults.standard.value(forKey: "longBreakDuration") as? Int ?? 15) * 60
+        maxSessionCount = UserDefaults.standard.value(forKey: "maxSessionCount") as? Int ?? 4
     }
 
     func hanglePhaseChange(_ newPhase: ScenePhase) {

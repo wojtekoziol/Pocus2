@@ -46,6 +46,7 @@ struct TimerView: View {
         }
         .frame(maxHeight: .infinity)
         .banner(show: $viewModel.isShowingBanner, with: viewModel.bannerData)
+        .onAppear(perform: viewModel.updateDurations)
     }
 }
 

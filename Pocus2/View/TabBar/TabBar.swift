@@ -73,7 +73,7 @@ struct RoundedTabBar: Shape {
 }
 
 #Preview {
-    let items: [TabBarItem] = [.timer, .settings]
+    let items: [TabBarItem] = [.timer, .stats]
 
     return VStack {
         Spacer()

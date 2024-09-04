@@ -11,9 +11,11 @@ struct NavigationView: View {
     @State private var selection: TabBarItem = .timer
 
     var body: some View {
-        TabBarView(selection: $selection) {
-            TimerView()
-                .tabBarItem(tab: .timer, selection: $selection)
+        NavigationStack {
+            TabBarView(selection: $selection) {
+                TimerView()
+                    .tabBarItem(tab: .timer, selection: $selection)
+            }
         }
     }
 }

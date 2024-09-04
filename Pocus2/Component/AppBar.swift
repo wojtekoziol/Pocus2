@@ -22,11 +22,10 @@ struct AppBar: View {
 
             Spacer()
 
-            Button {
-                // TODO: Go to settings
+            NavigationLink {
+                SettingsView()
             } label: {
-                Image(systemName: "gearshape.fill")
-                    .font(.title2)
+                Image(systemName: "gearshape")                    
             }
         }
         .foregroundStyle(.accent)

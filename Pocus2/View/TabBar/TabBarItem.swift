@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 
 enum TabBarItem: Hashable {
-    case timer, settings
+    case timer, stats
 
     var iconName: String {
         switch self {
         case .timer:
             "timer"
-        case .settings:
-            "gear"
+        case .stats:
+            "chart.bar"
         }
     }
 }
