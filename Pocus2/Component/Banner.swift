@@ -9,11 +9,12 @@ import SwiftUI
 
 struct BannerData {
     var title: String
-    var message: String
+    var message: String?
     var emoji: String
 
     static let afterFocus = BannerData(title: "Your focus session has ended!", message: "Make sure to get some rest.", emoji: "🎊")
     static let afterBreak = BannerData(title: "It's time to focus!", message: "Give it all you've got.", emoji: "⚡️")
+    static let skip = BannerData(title: "Session Skipped!", emoji: "🚀")
 }
 
 struct BannerModifier: ViewModifier {
@@ -33,8 +34,10 @@ struct BannerModifier: ViewModifier {
                         Text(bannerData.title)
                             .bold()
 
-                        Text(bannerData.message)
-                            .font(.caption)
+                        if let message = bannerData.message {
+                            Text(message)
+                                .font(.caption)
+                        }
                     }
 
                     Spacer()

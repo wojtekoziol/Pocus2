@@ -32,10 +32,10 @@ class TimerViewModel {
         self.notificationService = notificationService
     }
 
-    private func start() {
-        if isBreak {
+    private func start(withNotification: Bool = true) {
+        if withNotification && isBreak {
             notificationService.scheduleNotification(for: TimeInterval(timeRemaining), title: "⚡️ It's time to focus!", body: "Give it all you've got.")
-        } else {
+        } else if withNotification {
             notificationService.scheduleNotification(for: TimeInterval(timeRemaining), title: "🎊 Your focus session has ended!", body: "Make sure to get some rest.")
         }
 
@@ -89,6 +89,9 @@ class TimerViewModel {
 
     func skip() {
         handleTimerEnd(withBanner: false)
+
+        bannerData = .skip
+        isShowingBanner = true
     }
 
     func toggle() {
@@ -117,6 +120,8 @@ class TimerViewModel {
             UserDefaults.standard.set(isBreak, forKey: "isBreak")
             UserDefaults.standard.set(sessionCount, forKey: "sessionCount")
 
+            elapsed = 0
+
         case .active:
             let endDate = UserDefaults.standard.object(forKey: "endDate") as? Date
             guard let endDate else { return }
@@ -125,7 +130,7 @@ class TimerViewModel {
 
             if endDate > .now {
                 elapsed = currentDuration - Int(endDate.timeIntervalSince(.now))
-                start()
+                start(withNotification: false)
             } else {
                 skip()
             }
