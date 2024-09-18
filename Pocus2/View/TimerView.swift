@@ -13,9 +13,9 @@ struct TimerView: View {
     @State private var viewModel: TimerViewModel
     @State private var showingResetAlert = false
 
-    init() {
+    init(statsViewModel: StatsViewModel) {
         let notificationService = NotificationService()
-        self._viewModel = State(initialValue: TimerViewModel(notificationService: notificationService))
+        self._viewModel = State(initialValue: TimerViewModel(notificationService: notificationService, statsViewModel: statsViewModel))
     }
 
     var body: some View {
@@ -58,5 +58,5 @@ struct TimerView: View {
 }
 
 #Preview {
-    TimerView()
+    TimerView(statsViewModel: StatsViewModel())
 }

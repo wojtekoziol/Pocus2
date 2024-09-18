@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F36D9102C9997A300E1FF26 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36D90F2C9997A300E1FF26 /* StatsView.swift */; };
+		9F36D9142C9998A500E1FF26 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36D9132C9998A500E1FF26 /* StatsViewModel.swift */; };
+		9F36D9232C9AED6E00E1FF26 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36D9222C9AED6E00E1FF26 /* Statistic.swift */; };
 		9F7A4CEF2C889D550063D765 /* AppBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A4CEE2C889D550063D765 /* AppBar.swift */; };
 		9F7A4CF12C88C4DA0063D765 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A4CF02C88C4DA0063D765 /* SettingsView.swift */; };
 		9FC093B52C84C27D00DD1E50 /* Pocus2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC093B42C84C27D00DD1E50 /* Pocus2App.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F36D90F2C9997A300E1FF26 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		9F36D9132C9998A500E1FF26 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		9F36D9222C9AED6E00E1FF26 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
 		9F7A4CEE2C889D550063D765 /* AppBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBar.swift; sourceTree = "<group>"; };
 		9F7A4CF02C88C4DA0063D765 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9FC093B12C84C27D00DD1E50 /* Pocus2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocus2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +51,10 @@
 		9FC093DB2C8860DF00DD1E50 /* TabBarItemPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemPreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		9F36D9152C999A2C00E1FF26 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		9FC093AE2C84C27D00DD1E50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -56,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F36D91E2C9AEC2600E1FF26 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9F36D9222C9AED6E00E1FF26 /* Statistic.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9F7A4CE92C886B250063D765 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +92,7 @@
 				9FC093D32C87742500DD1E50 /* NavigationView.swift */,
 				9FC093B62C84C27D00DD1E50 /* TimerView.swift */,
 				9F7A4CF02C88C4DA0063D765 /* SettingsView.swift */,
+				9F36D90F2C9997A300E1FF26 /* StatsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -82,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				9FC093CD2C84C92100DD1E50 /* TimerViewModel.swift */,
+				9F36D9132C9998A500E1FF26 /* StatsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -126,6 +146,8 @@
 			children = (
 				9FC093B42C84C27D00DD1E50 /* Pocus2App.swift */,
 				9F7A4CED2C886B620063D765 /* Component */,
+				9F36D9152C999A2C00E1FF26 /* Extensions */,
+				9F36D91E2C9AEC2600E1FF26 /* Models */,
 				9F7A4CEA2C886B380063D765 /* View */,
 				9F7A4CEB2C886B540063D765 /* ViewModel */,
 				9F7A4CEC2C886B5A0063D765 /* Service */,
@@ -157,6 +179,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				9F36D9152C999A2C00E1FF26 /* Extensions */,
 			);
 			name = Pocus2;
 			productName = Pocus2;
@@ -213,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F36D9232C9AED6E00E1FF26 /* Statistic.swift in Sources */,
 				9FC093D62C884D6A00DD1E50 /* TabBar.swift in Sources */,
 				9FC093CE2C84C92100DD1E50 /* TimerViewModel.swift in Sources */,
 				9FC093B72C84C27D00DD1E50 /* TimerView.swift in Sources */,
@@ -223,7 +249,9 @@
 				9F7A4CF12C88C4DA0063D765 /* SettingsView.swift in Sources */,
 				9FC093D42C87742500DD1E50 /* NavigationView.swift in Sources */,
 				9FC093C92C84C3F700DD1E50 /* Arc.swift in Sources */,
+				9F36D9142C9998A500E1FF26 /* StatsViewModel.swift in Sources */,
 				9FC093D22C87626700DD1E50 /* Banner.swift in Sources */,
+				9F36D9102C9997A300E1FF26 /* StatsView.swift in Sources */,
 				9FC093D02C84DA3900DD1E50 /* NotificationService.swift in Sources */,
 				9FC093D82C885E9800DD1E50 /* TabBarView.swift in Sources */,
 				9FC093B52C84C27D00DD1E50 /* Pocus2App.swift in Sources */,

@@ -14,6 +14,7 @@ class TimerViewModel {
     }
 
     let notificationService: NotificationService
+    let statsViewModel: StatsViewModel
 
     private var focusDuration = 25 * 60
     private var shortBreakDuration = 5 * 60
@@ -21,15 +22,19 @@ class TimerViewModel {
     private var maxSessionCount = 4
 
     private var timer: Timer?
+
+    // Elapsed seconds
     private var elapsed = 0
+
     private(set) var isRunning = false
     private var isBreak = false
     private var sessionCount = 0
     var isShowingBanner = false
     private(set) var bannerData: BannerData = .afterFocus
 
-    init(notificationService: NotificationService) {
+    init(notificationService: NotificationService, statsViewModel: StatsViewModel) {
         self.notificationService = notificationService
+        self.statsViewModel = statsViewModel
     }
 
     private func start(withNotification: Bool = true) {
@@ -41,17 +46,25 @@ class TimerViewModel {
 
         isRunning = true
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
-            guard let self else { return }
+            guard let self else {
+                timer.invalidate()
+                return
+            }
 
             if elapsed >= currentDuration || !isRunning {
-                handleTimerEnd()
+                handleTimerEnd(saveStats: true)
             } else {
                 elapsed += 1
             }
         }
     }
 
-    private func handleTimerEnd(withBanner: Bool = true) {
+    private func handleTimerEnd(withBanner: Bool = true, saveStats: Bool) {
+        if !isBreak && saveStats {
+            statsViewModel.addMinutes(elapsed / 60)
+            statsViewModel.addSession()
+        }
+
         if withBanner {
             bannerData = isBreak ? .afterBreak : .afterFocus
             isShowingBanner = true
@@ -88,7 +101,7 @@ class TimerViewModel {
     }
 
     func skip() {
-        handleTimerEnd(withBanner: false)
+        handleTimerEnd(withBanner: false, saveStats: false)
 
         bannerData = .skip
         isShowingBanner = true
@@ -130,9 +143,9 @@ class TimerViewModel {
 
             if endDate > .now {
                 elapsed = currentDuration - Int(endDate.timeIntervalSince(.now))
-                start(withNotification: false)
             } else {
-                skip()
+                elapsed = currentDuration
+                handleTimerEnd(withBanner: false, saveStats: true)
             }
 
             UserDefaults.standard.removeObject(forKey: "endDate")
@@ -155,7 +168,9 @@ class TimerViewModel {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = timeRemaining < 60 ? [.second] : [.minute]
 
-        let formattedString = formatter.string(from: TimeInterval(timeRemaining)) ?? ""
+        let adjustment = timeRemaining >= 60 ? 30 : 0
+
+        let formattedString = formatter.string(from: TimeInterval(timeRemaining + adjustment)) ?? ""
         return formattedString
     }
 
